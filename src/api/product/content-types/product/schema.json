@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "color": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "instandDelivery": {
+      "type": "boolean"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "clothes",
+        "jewelry",
+        "accessories"
+      ]
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "men",
+        "women",
+        "men&women"
+      ]
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::order.order",
+      "mappedBy": "products"
+    }
+  }
+}
